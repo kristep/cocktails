@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coctail finder</title>
+    <link rel="stylesheet" href="index.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="finder">
+      <h1>
+        find Your coctail
+        <span class="find_by">by:
+          <input onclick class="radio_input" type="radio" id="title" name="find_by" value="name" checked/>
+          <label for="title">name</label>
+          <span id="or">or</span>
+          <input onclick class="radio_input" type="radio" id="ingred" name="find_by" value="ingredient" />
+          <label for="ingred">ingredient</label>                   
+        </span>
+        
+      </h1>
+      <input type="text" class="text_input" placeholder="enter name or ingredient"/>
+
+    <span class="error"></span> 
+     <button class="btn btn_random">Show random Coctail</button> 
+    </div>
+
+    <!-- RECIPE CONTAINER -->
+    <div class="recipe_container">
+
+
+
+      <!-- <div class="coctail_pict_cont">
+        <h2 class="coctail_title">Mojito</h2>
+        <img class="coctail_img"
+        src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview"
+        alt="mojito"/> 
+      </div>
+
+      <div class="coctail_instructions"> 
+         <p>
+          Muddle mint leaves with sugar and lime juice.
+          Add a splash of soda water and fill the glass with cracked ice.
+          Pour the rum and top with soda water.
+          Garnish and serve with straw.
+        </p>          
+      </div> 
+
+      <ul class="ingredients_list">          
+        <li>
+          <a href="">
+            <img src="https://www.thecocktaildb.com/images/ingredients/Light rum-Small.png"/>
+          </a>
+          <span> 2-3 oz Light rum </span>            
+        </li>
+        <li>
+          <img src="https://www.thecocktaildb.com/images/ingredients/Lime-Small.png" />
+          <span>
+            2-3 oz Light rum  
+            </span>
+        </li>
+      </ul>        -->
+
+    </div>
+
+
+    <!-- SEARCH RESULTS CONTAINER -->
+    <div class="search_results">
+      <!-- <div class="search_var ">
+        <a href="">
+          <h3 class="coctail_title title_var">Title</h3>
+        <img class="coctail_img_var"
+        src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview"
+        alt="mojito"/>
+        </a>        
+      </div>
+      <div class="search_var">
+        <a href="">
+          <h3 class="coctail_title title_var">Title</h3>
+        <img class="coctail_img_var"
+        src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview"
+        alt="mojito"/>
+        </a>        
+      </div>     -->
+    </div>
+
+    <!-- INGREDIENT CONTAINER -->
+      <div class="ingredient_container">
+        <!-- <h3 class="ingr_name">Ingredient name</h3>
+        <img src="https://www.thecocktaildb.com/images/ingredients/gin.png" alt="">
+        <p class="ingr_description"></p>         -->
+      </div> 
+
+
+     
+
+    <script src="./index.js"></script>
+  </body>
+</html>
