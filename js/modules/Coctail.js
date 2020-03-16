@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../node_modules/axios/index";
 import { elements } from '../views/base';
 
 export default class Coctail {

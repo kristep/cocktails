@@ -1,5 +1,5 @@
 import { elements } from './base.js';
-import axios from "axios";
+import axios from "../../node_modules/axios/index";
 
 export const renderIngredient = async ingredient => {
   const markup = `
