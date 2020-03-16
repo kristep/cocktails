@@ -1,5 +1,4 @@
-import axios from "../../node_modules/axios/index";
-
+import axios from "axios";
 
 export default class Ingredient {
   constructor(name) {
