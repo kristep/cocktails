@@ -1,10 +1,17 @@
+
+
 html {
   box-sizing: border-box;
 }
 
 :root {
-  --second-color: hsla(148, 68%, 89%, 0.6);
+  --accent-light:#FA4850;
+  --dark: #011526ca;
+  --lightest: #D7D9D8;
+  --light: #8B8C80;
+  --accent-dark: #731A1A; 
 }
+
 
 *,
 *:before,
@@ -12,30 +19,102 @@ html {
   box-sizing: inherit;
 }
 
+html, body {
+  height: 100%;
+}
 body {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;  
   font-family: 'Montserrat Alternates', sans-serif;  
+
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(293,475,430)'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='1' stop-color='%23e9eef2'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='470' height='391.7' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.05'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  /* background by SVGBackgrounds.com */
+
 }
 
+
+.content {
+  flex: 1 0 auto;
+  width: 100%;  
+  align-self: center;
+}
+
+
+
+/* ********* LOADDER ********* */
+svg {
+  position: absolute;
+}
+circle:nth-of-type(1) { fill: #ffffff; }
+circle:nth-of-type(2) { fill: #fcd837; }
+circle:nth-of-type(3) { fill: #f9a11f; }
+circle:nth-of-type(4) { fill: #f27c21; }
+
+#clackers {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 /* finder */
-body,
+.main,
 .finder {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 .finder {
   width: 100%;
-  height: 30%;
-  background-color: lightseagreen;
-  padding-bottom: 30px;
+  height: 100vh;
+  
+  background: 
+  linear-gradient(-30deg, hsla(213, 14%, 66%, 0.657) 0%, hsla(213, 14%, 66%, 0.657) 27%, transparent 27%), linear-gradient(50deg, var(--dark) 0%, var(--dark) 35%, rgb(220, 226, 231) 35%); 
+
   position: relative;  
+  padding: 150px;
+  transition: 1s;
+}
+
+
+.top_line {
+  height: 60px;
+  width: 100vw;  
+  background-image: url(../img/drinks-32000_1280.png);
+  background-size: contain;   
+  position: absolute;
+  bottom: 0px;  
+}
+
+
+
+
+.logo {
+  height: 250px;
+  width: 500px;
+justify-self: flex-end;
+transition: 1s;  
+}
+
+.logo img {
+  height: inherit;
+  width: inherit;
 }
 
 h1 {
   font-size: 3rem;  
+  margin-top: 0;
+  padding-top: 0;
+  text-align: center;
 }
 
 .find_by {
@@ -50,86 +129,150 @@ h1 {
   position: absolute;
 }
 
+#pls-select {
+  position: absolute;
+  font-size: 20px;
+  bottom: -30px;
+  color: #778390
+}
+
 .text_input {
   padding: 8px;
   width: 300px;
-  background-color: lemonchiffon;
+  background-color: rgb(240, 240, 240);
+  border: 2px solid var(--accent-dark);
+  outline: none;
+}
+
+.btn {
+  cursor: pointer;
+  outline: none;
+  border: none;  
+  border-radius: 8px;
+  margin-top: 15px;  
+  padding: 6px 10px;
+  background-color: rgb(220, 226, 231);
+  color: var(--accent-light);
+  font-size: 18px;
+  font-family:'Montserrat Alternates', sans-serif;  
+  font-weight: bold;    
+  box-shadow: -3px -3px 6px rgba(255, 255, 255, 0.8),
+              3px 3px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover,
+.radio_input+label:hover {
+  opacity: 0.5;
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+              6px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  opacity: 1;
+  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+              inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+  color: var(--accent-dark)
 }
 
 .radio_input {
   visibility: hidden;    
 }  
 .radio_input+label {
-  padding: 0 20px
+  margin: 0 20px;
+  padding: 2px;
+  color: var(--accent-light);
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
 }
 .radio_input:checked+label {
-  color: var(--second-color);  
-  text-decoration: underline;  
+  color: var(--accent-dark); 
+  opacity: 1;
+  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+              inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+  
 }
 .radio_input+label:hover {
-  color: var(--second-color);
+  color: var(--accent-dark);
   cursor: pointer;  
 }
 
-.btn {
-  background-color: var(--second-color);
-  outline: none;
-  border: none;  
-  padding: 5px;
-  margin-top: 15px;
-  cursor: pointer;
-  color: white;
-  font-size: 15px;
-}
+
+
 .error {
   position: absolute;
   bottom: -30px;
 }
 
-/* recipe */
+
+.recipe_container,
+.ingredient_container,
+.search_results {
+  max-width: 800px;
+  width: 90vw;
+  padding-top: 40px;
+  margin-top: 20px;
+  background-color: #F2F5F7;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.6); 
+  padding: 10px;    
+  animation: 1s ease-in-out 0s 1 fadeIn;
+  padding-bottom: 80px;
+}
+
+
+
+
+/************************** recipe *******************/
 .recipe_container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 0.3fr, 1fr, 0.2fr;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  max-width: 800px;
-  width: 90vw;
-  margin-top: 30px;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 50px;
 }
 
 .coctail_pict_cont {
-  grid-area: 1 / 2 / 2 / 3;
+  grid-area: 2 / 2 / 3 / 3;
+  width: 100%;
+  height: 300px;  
   position: relative;
 }
 
 .coctail_title {
-position: absolute;
-bottom: 0;
+grid-area: 1 / 1 / 2 / 3; 
 font-family: 'Montserrat Alternates', sans-serif;
-width: 200px;
 text-align: center;
-background-color: var(--second-color);
-padding: 2px;
-}
-
-.coctail_img {
-  width: 200px;  
+font-weight: bold;
+color: var(--accent-light);
 }
 
 .coctail_instructions {
-  grid-area: 2 / 2 / 3 / 3;
+  grid-area: 3 / 2 / 4 / 3;
+  height: auto;
+ 
 }
 
 .ingredients_list {  
+  margin: 0;
+  padding: 0;  
   list-style-type: none; 
-  grid-area: 1 / 1 / 3 / 2;  
+  grid-area:  2 / 1 / 4 / 2;  
+  height: auto;
 }
 
 .ingredients_list li {  
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  background-color: #EAEFF3;  
+  animation: 0.3s ease-in 0s 1 slideFromLeft;  
+}
+
+.ingredients_list li:nth-child(2n) {
+  background-color: #DFE4E8;
 }
 
 .ingredients_list li img {
@@ -140,26 +283,32 @@ padding: 2px;
 
 
 /* SEARCH RESULTS CONTAINER */
+
 .search_results {
-  display: flex;
-  flex-wrap: wrap;    
+  display: flex;  
+  flex-wrap: wrap;
   max-width: 800px;
-  width: 90vw;  
+  width: 90vw;   
+  justify-content: center;
+
 }
 
 .coctail_img_var {
-  width: 180px;
+  width: 170px;
 }
 
 .search_var {
   display: flex;
   flex-direction: column;  
   justify-content: flex-end;
-  margin-left: 20px;
-  margin-bottom: 40px;
+  margin-left: 10px;
+  
+  margin-top: 30px;
+  margin-bottom: 20px;
   height: auto; 
-  background-color: var(--second-color);   
-  position: relative;
+  background-color: hsla(210, 43%, 86%, 0.657);
+/* var(--accent-light); */  
+  position: relative;  
 }
 
 .search_var:hover {
@@ -180,12 +329,14 @@ padding: 2px;
   padding-bottom: 5px;  
   background: none;
   align-self: center;
+  color: var(--dark)
 }
 
 .alco, .category {
   display: block;
   position: absolute;  
-  background-color: var(--second-color);
+  background-color: hsla(210, 43%, 86%, 0.657);
+/* var(--accent-light); */
   width: 100%;
 }
 .alco {
@@ -197,23 +348,121 @@ padding: 2px;
 
 
 /* INGREDIENT CONTAINER */
-.ingr_top {
+
+.ingredient_container {
+  width: 90vw;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;  
   align-items: center;
-  padding-bottom: 40px;
 }
 
-.ingr_content {
-  display: flex; 
+.ingredient_container img {  
+  width: 30%;  
 }
 
-.ingr_content img {
-  max-height: 300px;
-}
-
-.btn_showByIngred {
-  color: black;
+.btn_showByIngred {  
   font-size: 20px;
+  background-color:#F2F5F7;
+  width: 35%;
+}
+
+
+/* **********    FOOTER ********** */
+footer {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #334350;
+  color: var(--lightest);
+  width: 100%;
+}
+.copy {
+ 
+  margin: 10px;
+
+}
+
+
+@media only screen and (max-width: 740px) {
+  .logo {
+    width: 400px;
+    height: 200px;
+  } 
+  .finder h1 {
+    font-size: 40px;
+  }
+  .find_by {
+    font-size: 1.5rem;
+  }
+  .recipe_container {
+    grid-template-columns: 1fr; 
+  }
+  .coctail_pict_cont {
+    grid-area: 1 / 1 / 2 / 2;
+    height: 200px;
+    margin-left: 25vw;
+    margin-top: 70px;
+  }
+  .coctail_instructions {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .ingredients_list {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .ingr_content img {  
+    width: 15vw;  
+  }
+
+  .btn_showByIngred {  
+    width: 45%;
+  }
+
+  
+}
+
+
+@media only screen and (max-width: 550px) {
+
+  .finder h1 {
+    font-size: 33px;
+  }
+  .find_by {
+    font-size: 25px;
+  }
+  .coctail_pict_cont {   
+    margin-left: 21vw; 
+  }  
+  .btn_showByIngred {  
+    width: 55%;
+    font-size: 18px;
+  }
+  #pls-select {
+    position: absolute;
+    font-size: 17px;
+    bottom: -22px;
+
+  }
+  .btn_random {
+    font-size: 16px;
+    padding: 5px 7px;
+  }
+}
+
+
+
+
+
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
