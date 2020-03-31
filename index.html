@@ -9,54 +9,68 @@
     <script src="https://kit.fontawesome.com/45cc682c27.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Berkshire+Swash|Pacifico|Walter+Turncoat&display=swap" rel="stylesheet">
   </head>
-  <body>
+<body>
+<div class="wrapper">
 
+  <header>      
+      <h1 class="header_title"> 
+        <div class="logo"></div>
+        find <i class="fas fa-cocktail"></i>our 
+         favorite coctail 
+      </h1>        
+  </header>
 
-
-  <header>
-    <div class="left">        
-    <!-- <img class="logo" src="../img/cocktails-1419481.png" alt=""> -->     
-      <h1 class="header_title"> <span class="span">find Your </span><span class="span"> favorite coctail</span>  </h1>     
-    </div>
       
-    <ul class="side_nav">
-      <li class="random">
-        <a class="nav-link random" href="#random">Random Coctail</a> 
-      </li>
-      <li class="favorites">
-        <a class="nav-link favorite " href="#favorite" >Favorite coctails</a>
-          <ul class="dropdown_content">
-            <!--  -->
-        </ul>
-      </li>        
-    </ul> 
- </header>
-      
-
-  <div class="find_line">      
+  <div class="find_line">   
+    <a class="random" href="#random"> get random Coctail</a>      
     <div class="finder">
+        <div class="finder_label">
+<span>find by:</span>
         <div class="radio_cont">
-          <span>find by:</span>
-        <input onclick class="radio_input" type="radio" id="title" name="find_by" value="name"/>
-        <label for="title">name</label>
-        <input onclick class="radio_input" type="radio" id="ingred" name="find_by" value="ingredient" />
-        <label for="ingred">ingredient</label>   
+          <input onclick class="radio_input" type="radio" id="title" name="find_by" value="name" checked/>
+          <label for="title">name</label>
+          <input onclick class="radio_input" type="radio" id="ingred" name="find_by" value="ingredient" />
+          <label for="ingred" id="ingred">ingredient</label>   
+        </div>     
         </div>
-        
-      
+         
+
         <div class="input_cont">
           <input type="text" class="text_input" placeholder="enter name or ingredient"/>
-        <button class="btn btn_submit" type="submit"><i class="fas fa-cocktail"></i></button>
+          <button class="btn btn_submit" type="submit"><i class="fas fa-cocktail"></i></button>
         </div>  
-    </div>
-  </div>
+    </div>    
       
-  <span class="error"></span> 
+  </div>
 
-</div>
 
-<div class="content">
-<div class="main">
+  <div class="content">
+    
+    <ul class="side_nav">  
+      <li class="favorites">
+        <a class="nav-link favorite " href="#favorite" > <i class="far fa-star "></i> Favorites <i class="far fa-star nav_fav"></i> </a>
+          <ul class="dropdown_content">
+     
+            <!--  -->
+            <li class="delete_all">Delete all favorites<i class="far fa-trash-alt"></i></li>
+          </ul>
+      </li>      
+      <li>
+        <a class="nav-link all-coctails" href="#allcoctails">All Coctails</a>
+      </li>
+      <li>
+        <a class="nav-link all-ingredients" href="#allingredients">Ingredients</a>
+      </li>   
+      <li class="home">
+        <a class="nav-link up" href="index.html"><i class="fas fa-home"></i></a>
+      </li>     
+    </ul> 
+
+
+
+    <div class="main">
+    <h5 class="message"></h5> 
+
      <div class="loader">
       <svg width="300" height="120" id="clackers">
         <!-- Left arc path -->
@@ -68,7 +82,7 @@
           <path id="arc-right-up" fill="none" d="M 100 90 A 90 90 0 0 0 190 0"/>
         </svg>
         
-        <text x="150" y="50" fill="#ffffff" font-family="Helvetica Neue,Helvetica,Arial" font-size="18"
+        <text x="150" y="50" fill="var(--dark)" font-family="Helvetica Neue,Helvetica,Arial" font-size="18"
               text-anchor="middle">
           L O A D I N G
         </text>
@@ -94,12 +108,43 @@
       </svg>
      </div>
 
-<!-- RECIPE CONTAINER -->
-<div class="recipe_container">
+     <ul class="all_ingred"></ul>
+
+     <div class="abc_menu">       
+      <a>A</a>
+      <a>B</a>
+      <a>C</a>
+      <a>D</a>
+      <a>E</a>
+      <a>F</a>
+      <a>G</a>
+      <a>H</a>
+      <a>I</a>
+      <a>J</a>
+      <a>K</a>
+      <a>L</a>
+      <a>M</a>
+      <a>N</a>
+      <a>O</a>
+      <a>P</a>
+      <a>Q</a>
+      <a>R</a>
+      <a>S</a>
+      <a>T</a>
+      <a>U</a>
+      <a>V</a>
+      <a>W</a>
+      <a>X</a>
+      <a>Y</a>
+      <a>Z</a>
+    </div>
 
 
 
-  <!-- <div class="coctail_pict_cont">
+
+      <!-- RECIPE CONTAINER -->
+      <div class="recipe_container">
+       <!-- <div class="coctail_pict_cont">
     <h2 class="coctail_title">Mojito</h2>
     <img class="coctail_img"
     src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview"
@@ -129,14 +174,12 @@
         </span>
     </li>
   </ul>        -->
+     </div>
 
-</div>
 
-
-<!-- SEARCH RESULTS CONTAINER -->
-<div class="search_results">
-
-  <!-- <div class="search_var ">
+      <!-- SEARCH RESULTS CONTAINER -->
+      <div class="search_results">
+        <!-- <div class="search_var ">
     <a href="">
       <h3 class="coctail_title title_var">Title</h3>
     <img class="coctail_img_var"
@@ -152,18 +195,24 @@
     alt="mojito"/>
     </a>        
   </div>     -->
-</div>
+      </div>
 
-<!-- INGREDIENT CONTAINER -->
-  <div class="ingredient_container">
+      <!-- INGREDIENT CONTAINER -->
+      <div class="ingredient_container">
+      </div> 
 
-  </div> 
-   </div>
-  </div>
+    </div>  <!-- end main -->
+
+
+
+  </div>   <!-- end content -->
  
-   <footer>
+</div>
+  
+ 
+  <footer>
      <span class="copy">&copy 2020 KriStep All Rights Reserved</span>
-   </footer>
+  </footer>
 
   <script type="text/javascript" src="js/bundle.js"></script></body>
 </html>

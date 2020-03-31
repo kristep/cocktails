@@ -1,8 +1,10 @@
 
-
-html {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
+
 
 :root {
   --accent-light:#D3D932;
@@ -13,16 +15,12 @@ html {
   --title-font: 'Berkshire Swash', cursive;
 }
 
+ ul, li,
+ body, .wrapper {
+   padding: 0;
+   margin: 0
+ }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-/* html, body {
-  height: 100%;
-} */
 body {
   margin: 0;
   padding: 0;
@@ -30,23 +28,40 @@ body {
   flex-direction: column;  
   font-family: 'Montserrat Alternates', sans-serif;  
   background-color: #F2F5F7;
+  font-size: 1em;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
 
-
-
+footer {
+  width: 100%;
+  height: 5vh;
+  background-color: var(--dark);   
+  color: var(--lightest);    
+  font-size: 0.8em;
+  z-index: 200;
+  padding-top: 2vh;
+}
 
 /* ********* LOADDER ********* */
 .loader {
-  display: none;
+  display: none;  
 }
+
 svg {
   position: absolute;
 }
-circle:nth-of-type(1) { fill: #ffffff; }
-circle:nth-of-type(2) { fill: #fcd837; }
-circle:nth-of-type(3) { fill: #f9a11f; }
-circle:nth-of-type(4) { fill: #f27c21; }
+circle:nth-of-type(1) { fill: var(--dark)}
+circle:nth-of-type(2) { fill: var(--accent-light)}
+circle:nth-of-type(3) { fill: var(--accent-light)}
+circle:nth-of-type(4) { fill: var(--dark) }
 
 #clackers {
   display: block;
@@ -56,711 +71,815 @@ circle:nth-of-type(4) { fill: #f27c21; }
   transform: translate(-50%, -50%);
 }
 
+.message {  
+  text-align: center;
+  font-size: 20px;
 
-
-a {
-  text-decoration: none;
-}
-li {
-  list-style-type: none;
 }
 
+.all_ingred {
+  font-size: 18px;
+  padding-left: 20px;
+  padding-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;  
+}
+.all_ingred li {
+  padding: 4px;
+}
+.all_ingred li a{
+  width: 100%;
+  cursor: pointer;
+ } 
+.all_ingred li:nth-child(2n) {
+  background-color: #e8e9eb
+}
 
-/* ******************* header **************** */
-header {
-  padding: 15px 10vw;
-  background-color: var(--dark);
+.abc_menu {
+  padding: 10px;   
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  
+}
+.abc_menu a {  
+  padding: 6px 10px;
+  margin: 1px;
+  background-color: var(--light);
+  color: var(--dark);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.abc_menu a:hover {
+  opacity: 0.6;
+}
+/* .active {
+  background-color: var(--accent-dark) !important;
+} */
+
+
+/* *************************  MOBILES FIRST *********************** */
+
+header {
+  height: 15vh;
+  width: 100vw;
   background-image: url(../img/background2.jpg);
-  background-size: cover;
   background-repeat: no-repeat;
- height: 90vh;
- transition: 1s;
+  background-size: cover;  
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
 }
 
 .header_title {
-  color: var(--lightest);
-  font-size: 50px;
-  font-family: var(--title-font);
-  cursor: pointer;
-
-}
-.nav-link {   
-  color: var(--accent-light);
-}
-
-.side_nav {
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  height: 10vh; 
-  margin: 0;  
-  position: relative;
-  padding: 0 40px;
-  display: none;
-}
-.side_nav li {
-  border-radius: 3px;  
-  margin-bottom: 10px;
- 
-  font-size: 18px;
-  font-family:'Montserrat Alternates', sans-serif;  
-  font-weight: bold;    
-
- transition: all 0.4s ease-in-out;
- align-self: flex-start;
-}
-
-.nav-link {
-  padding: 6px 10px;
-  box-shadow: -2px -2px 3px var(--lightest),
-  2px 2px 3px var(--dark);
-  transition: all 0.2s ease-in-out;
-}
-.nav-link:hover {
-  opacity: 0.7;
-
-}
-.side_nav li a {
-  color: var(--light);
-}
-
-.dropdown_li:hover {
-  background-color: var(--light);
-}
-
-.favorite {
-  position: absolute;
-}
-.dropdown_content span {
-  cursor: pointer; 
-  color: var(--dark);
-  width: 90%;
-  height: 100%;
-  padding: 15px;
-}
-.dropdown_content{
-  display: none;
-  position: absolute;
-  list-style-type: none;  
- top: 130px;
-  right: 30px;
-}
-
-.dropdown_content li {
   display: flex;
-  justify-content: space-between; 
-  background-color: rgb(205, 212, 221);
-  position: relative; 
-  margin: 0;
-  z-index: 10;
-  box-shadow: none;
-  border-radius: 0;
-  border-bottom: 2px solid white;
-  width: 300px;
+  flex-direction: row;
+  font-size: 1.5em;
+  color: var(--lightest);
+  margin: 0; 
+  padding-left: 30px;
 }
-
-
-.dropdown_content li i {
-  margin-left: 20px;
-  color: var(--accent-dark);
-  padding: 15px;
+header i {
+  padding-left: 10px;
 }
-
-
-.btn {
-  cursor: pointer;
-  outline: none;
-  border: none;  
-  border-radius: 8px;  
-  padding: 6px 10px;
-  color: var(--dark);
-  background-color: var(--accent-dark);
-  font-size: 18px;
-  font-family:'Montserrat Alternates', sans-serif;  
-  font-weight: bold;    
-  box-shadow: -3px -3px 6px rgba(255, 255, 255, 0.8),
-              3px 3px 6px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease-in-out;
-}
-
-.btn:hover,
-.radio_input+label:hover {  
-  opacity: 0.7;
-  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
-              6px 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-.btn:active {
-  opacity: 1;
-  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
-              inset 8px 8px 16px rgba(0, 0, 0, 0.1);
-  color: var(--accent-dark)
+.logo {
+  display: none;
 }
 
 
 
-
-
-
-/********************* finder *****************/
-
+/* ***************  find line ********************** */
 .find_line {
   width: 100%;
-  height: 10vh;
+  height: 14vh;
+  display: flex;
+/* padding: 0 !important; */
+  background-color: var(--lightest);
+  border-bottom: 3px solid var(--dark);
+}
+.finder_label {
+  display: flex;
+}
+.finder {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--lightest);
-  border-bottom: 2px solid var(--dark);
-}
-
-.finder {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  font-size: 25px;
+  align-items: center;  
   position: relative;
-  display: flex;
+  width: 75%;
 }
 
 
-.text_input {
-  padding: 8px;
-  margin-left: 20px;
-  width: 300px;  
+.random {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--light);
+  border-left: 2px solid var(--dark);
+ 
+}
+.input_cont {
+  align-self: center;
+  margin-top: 5px;
+  /* margin-left: -30px; */
+
+}
+.text_input { 
   background-color: var(--lightest);
   border-radius: 5px 0 0 5px;
   border: 2px solid var(--dark);
   outline: none;
+  padding: 5px;
+}
+
+.btn_submit {
+  border: none;
+  border-radius: 0 5px 5px 0;
+  margin: 0;
+  box-shadow: unset;
+  background-color: var(--dark);
+  position: absolute;  
+  color: var(--lightest);
+  padding: 6.8px
 }
 
 .text_input:focus {
   background-color: rgba(224, 227, 150, 0.233);
 }
-.btn_submit {
-  height: 35px;
-  border-radius: 0 5px 5px 0;
-  margin: 0;
-  box-shadow: unset;
-  background-color: var(--dark);
-  position: absolute;
-  top: 2px;
-  color: var(--lightest);
-}
 
 .radio_input {
-  visibility: hidden;    
+  display: none;    
 }  
 .radio_input+label {
-  padding: 5px;
+  padding: 5px 7px;
   color: var(--accent-light);
   font-weight: bold;
   border-radius: 3px;
   transition: all 0.2s ease-in-out;
+  font-size: 1.1em;
 }
 .radio_input:checked+label {
   color: var(--accent-dark); 
   opacity: 1;
   box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
-              inset 8px 8px 16px rgba(0, 0, 0, 0.1);
-  
+              inset 8px 8px 16px rgba(0, 0, 0, 0.1);  
 }
 .radio_input+label:hover {
   color: var(--accent-dark);
   cursor: pointer;  
 }
 
-.error {
- margin: 20px auto;
- font-size: 20px;
-}
 
-
+/* ***************  navigation ********************** */
 .content {
-  flex: 1 0 auto;
-  width: 100%;  
-  align-self: center;
+  display: flex;
+  flex-direction: column;
+  /* height: 70vh; */
 }
 
 .main {
+  height: 90%;  
+  z-index: 1;
+}
+
+.side_nav {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  height: 8vh;
+  width: 100vw;
+  z-index: 2;
+  padding-top: 20px;
+}
+
+.side_nav li {
+  background-color: var(--dark);
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  justify-content: center;
+  align-items:center;
+  width: 25%;
+  border-left: 1px solid var(--lightest)
 }
+.side_nav li:first-child {
+  border-left: none;
+}
+
+.nav-link {
+  color: var(--light);
+  font-size: 0.9em;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
+
+.nav_fav {
+  width: 3px;
+  visibility: hidden;    
+}
+.dropdown_content{  
+  position: absolute ;
+  bottom: 8vh;
+  left: 0;
+}
+
+.dropdown_content li { 
+  background-color: var(--light);
+   position: relative; 
+  z-index: 10; 
+  border-bottom: 2px solid var(--dark);
+  width: 300px;  
+  font-size: 16px;
+  padding: 7px;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.delete_all {
+  background-color: var(--lightest) !important;
+  border-top: 2px solid var(--dark);
+}
+
+.up {
+  width: 10%
+}
+
+
+
+
 
 .recipe_container,
 .ingredient_container,
-.search_results {
-  max-width: 800px;
-  width: 90vw;
-  padding-top: 20px;
-  background-color: var(--lightest);
-  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.6); 
-  padding: 10px;    
-  animation: 1s ease-in-out 0s 1 fadeIn;
-  padding-bottom: 80px;
+.search_results {    
+  width: 100vw; 
+  margin: 0 auto;  
+  display: flex;
+  flex-direction: column;    
+  animation: 0.6s ease-in-out 0s 1 fadeIn;
 }
 
 
-
-
-/************************** recipe *******************/
+  /* ***************  recipe container ********************** */
 .recipe_container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 0.3fr, 1fr, 0.2fr;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  justify-content: center;
-  font-size: 18px;
-  margin-bottom: 50px;
-}
-
-.coctail_pict_cont {
-  grid-area: 2 / 2 / 3 / 3;
-  width: 100%;
-  height: 300px;  
   position: relative;
 }
-
+  
 .coctail_title {
-grid-area: 1 / 1 / 2 / 3; 
-font-family: var(--title-font);
-text-align: center;
-font-weight: bold;
-color: var(--accent-dark);
-position: relative;
-}
-
-.title_var {
-  position: static;
-  width: 150px;
-  margin: 0;
-  padding-bottom: 5px;  
-  background: none;
-  align-self: center;
-  color: var(--dark)
+  color: var(--dark);
+  justify-self: center;
+  padding: 0 10px;
+  order: 1;
 }
 
 .fav_icon {
   perspective: 600px;
-  position: absolute;
-  right: 10px;
-  top: -10px;
   transition: 1s;
-  color: var(--dark); 
-}
-.fav_icon:hover {
-  cursor: pointer;
-  color: var(--accent-dark);  
+  position: absolute;
+  top: 20px;
+  right: 80px;
+  color: var(--accent-dark)
 }
 
-.fav_icon-clicked {
-  transform: rotate3d(0.8, 0.8, 0.5, 360deg);
+.fav_icon-clicked {    
+  transform: rotate3d(0.8, 0.8, 1, 360deg);
   color: var(--accent-light);
+}
+.coctail_pict {
+  width: 200px;
+  height: 200px;
+  justify-self: center;
+  border: 2px solid var(--dark);
+  order: 2;
 }
 
 .coctail_instructions {
-  grid-area: 3 / 2 / 4 / 3;
-  height: auto; 
+  order: 4;
+  padding: 10px;
+  padding-bottom: 10vh;
 }
-
 .ingredients_list {  
-  margin: 0;
-  padding: 0;  
-  list-style-type: none; 
-  grid-area:  2 / 1 / 4 / 2;  
+  order: 3;
   height: auto;
+  margin-left: 10vw;
+
 }
 
 .ingredients_list li {  
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border-bottom: 1px solid var(--accent-dark);
-  width: 90%;
+  /* border-bottom: 1px solid var(--accent-dark); */
+  width: 90%;  
 }
-
+.ingredients_list a {
+  font-size: 1em;   
+}
 .ingredients_list li img {
-  width: 70px;
-  cursor: pointer;
+  width: 50px;
+  cursor: pointer;  
 }
 
 
 
 
-/* SEARCH RESULTS CONTAINER */
+/* ***************** search results **************** */
 
-.search_results {
-  display: flex;  
-  flex-wrap: wrap;
-  max-width: 800px;
-  width: 90vw;   
-  justify-content: center;
+.search_var {
+  width: 95%;
+  flex-direction: row;    
+  margin: 0 auto;     
+  background-color: unset;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--light);
+}
+
+.coctail_link {
+  display: flex;
+  width: 100%;
 
 }
 
 .coctail_img_var {
-  width: 170px;
+  width: 100px; 
+  margin-left: 15px;  
+  border: 2px solid var(--dark)  ;
+  align-self: flex-end;
+  cursor: pointer;
 }
 
-.search_var {
-  display: flex;
-  flex-direction: column;  
-  justify-content: flex-end;
-  margin-left: 10px;  
-  margin-top: 30px;
-  margin-bottom: 20px;
-  height: auto; 
-  background-color: rgba(211, 217, 50, 0.226);
-/* var(--accent-light); */  
-  position: relative;  
+.title_var {
+  color: var(--dark);
+  font-size: 18px; 
+  /* width: 150px; */
+  
 }
 
-.search_var:hover {
-  transform: scale(1.1);
-}
-
-.search_var a {
-  text-decoration: none;
-  color: black;
-  display: flex;
-  flex-direction: column; 
-}
-
-
-
-.alco, .category {
-  display: block;
-  position: absolute;  
-  background-color: rgba(211, 217, 50, 0.226);
-/* var(--accent-light); */
-  width: 100%;
-}
-.alco {
-  bottom: -19px
-}
-.category {
-  bottom: 0px;
-  background-color: rgba(211, 217, 50, 0.411)
-}
-
-
-/* INGREDIENT CONTAINER */
-
-.ingredient_container {
-  width: 90vw;
-  max-width: 800px;
+.bookmark {    
   display: flex;
   flex-direction: column;
-  justify-content: center;  
+  justify-content: center;
+  align-items: center;   
+  width: 60%;
+  cursor: pointer;
+}
+
+.alco,
+.category {        
+  background-color: unset;
+  font-size: 15px;
+  color: var(--accent-dark);
+}
+
+
+
+
+/* ***************** ingredient container **************** */
+.ingredient_container {
+  padding-top: 30px;
+  width: 90vw;   
+}
+
+.ingr_top {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  flex-direction: row;
 }
 
 .ingredient_container img {  
-  width: 30%;  
+  width: 35%;  
 }
 
 .btn_showByIngred {  
-  font-size: 20px;
+  font-size: 18px;
+  height: 60%;
   background-color: var(--light);
-  width: 250px;
+  width: 200px;
   border-radius: 3px;
+  padding: 5px 5px;
+  border-top: none;
+  border-left: none;
   background: linear-gradient(180deg, var(--lightest) 50%, var(--accent-light) 50%)
 }
 
 
-
-
-/* **********    FOOTER ********** */
-.content {
-  min-height: calc(70vh - 10vh);
-}
-
-footer {
-  height: 8vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: var(--dark);
-  font-size: 14px;
-  width: 100%;
-  background-color: var(--lightest);
-  border-top: 2px solid var(--dark);
   
-}
-.copy { 
-  margin: 10px;
-  margin-top: 30px
+
+@media only screen and (min-width: 480px) {
+
+  .find_line{
+    padding-left: 0;
+    width: 100vw;
+    height: 10vh;
   
-}
-
-
-
-/* ***********  MEDIA QUERIES ************ */
-
-@media only screen and (max-width: 1400px) {
-  header {
-  padding: 15px 5vw;
   }
-}
+  .random {
+    width: 25%;
 
-@media only screen and (max-width: 1200px) {
-  header {
-  padding: 15px 3vw;
   }
-}
-
-
-
-@media only screen and (max-width: 850px) {
-  header {
-    padding: 15px 2vw;
-    }
-
- .find_line {
-   height: 13vh;
+ .finder {
+   flex-direction: row;
+   justify-content: space-evenly; 
+   width: 75%;
+  
  }
+ .finder_label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.finder_label span {
+  transform: rotate(-90deg);
+  font-size: 13px;
+  text-transform: uppercase;
+  margin:0 -20px
+
+}
+ .radio_cont {
+   width: 22%;
+   display: flex;
+   flex-direction: column; 
+ }
+
+ .text_input {
+   width: 85%;
+   padding: 12px 3px;
+ }
+ .input_cont {
+   margin-left: 5px
+ }
+ .btn_submit {
+   padding: 14px 8px
+ }
+
+}
+
+@media only screen and (min-width: 600px) {
+
+  /* .logo {
+    display: block;
+    background-image: url(../img/coctails5.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 130px;
+    height: 55px;
+    position: absolute;
+    top: 7.7vh;
+    left: 3vw;
   
-  .finder {
+  } */
+
+
+  .text_input {
+    width: 180px;  
+  }
+
+  .recipe_container,
+  .ingredient_container,
+  .search_results,
+  .ingredients_list {
+    font-size: 1.1em;   
+  }
+
+  .coctail_instructions {
+    padding-left: 30px;
+    padding-right: 30px
+  }
+  .finder_label span {
+    transform: rotate(-90deg);
+    font-size: 13px;
+    text-transform: uppercase;
+    margin:0 -20px
+  }
+
+  .all_ingred {
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    column-count: 2;
+    column-gap: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) { 
+  .text_input {
+    width: 210px;  
+  }
+  .radio_cont {
+    flex-direction: row; 
+    font-size: 22px;
+    margin-right: -30px;
+  }
+  .finder_label span {
+    transform: rotate(0) translateX(-25px);
+    font-size: 16px;
+    text-transform: lowercase;
+    padding-left: 0;
+
+  }
+  .content {
+    display: flex;
+    flex-direction: row;
+    width: 100vw 
+  }
+    
+  .main {
+    width: 75vw;
+    /* height: 100%; */
+  }
+.find_line{
+  position: sticky;
+    top: 0;
+    z-index: 100;
+}
+  .side_nav {
+    position: sticky;
+    top: 10vh;
+    display: flex;
     flex-direction: column;
+    height: 87vh;
+    width: 25vw;
+    background-color: var(--dark);
+  }
+
+  .side_nav li {
+    display:inline-block;
+    width: 95%;
+    border-radius: 3px;  
+    margin-bottom: 30px; 
+    font-size: 18px;      
+    font-family:'Montserrat Alternates', sans-serif;  
+    font-weight: bold;    
+    transition: all 0.4s ease-in-out;
+    align-self: flex-start;  
+  }
+  
+  .nav-link {
+    width: 100%;
+    padding: 16px 10px;
+    border-bottom: 1px solid var(--lightest);
+    transition: all 0.2s ease-in-out;
+    font-size: 18px;
+  }
+  .nav-link:hover {
+    opacity: 0.7;  
+  }
+  .side_nav li a {
+    color: var(--light);
+    display:inline-block;
+    width: 100%;
+  }
+  .dropdown_content{
+    left: 100%;
+    top: -1%;
+  }
+  .dropdown_li:hover {
+    background-color: var(--lightest);
+  }
+
+  .dropdown_content li {
+    display: flex;
+    justify-content: space-between; 
+    width: 400px;
+    margin: 0;
+   
+  }
+
+  .dropdown_content li i {
+    margin-left: 20px;
+    color: var(--accent-dark);
+    padding: 15px;
+  }
+  .dropdown_content span {
+    cursor: pointer; 
+    color: var(--dark);
+    width: 90%;
+    height: 100%;
+    padding: 15px;
+  }
+
+  .home {
+    visibility: hidden;
+    z-index: 1;
+  }
+  .random {
+    display: block;
+    height: 10vh;      
+    background-color: var(--light);
+    color: var(--light);
+    background-repeat: repeat-x; 
+    background-size: contain;
+    z-index: 5;  
+    border-bottom: 2px solid var(--dark);
+    border-right: 3px solid var(--dark);
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 20px;   
+    opacity: 0.8;
+    text-transform: uppercase;
+    color: var(--dark);
+  font-weight: bold;
+  }
+
+
+
+  .recipe_container,
+  .ingredient_container,
+  .search_results {
+    max-width: 900px;
+    width: 75vw;
+    padding-left: 30px;  
+  }
+
+  /* ***************** recipe container ***************** */
+  .recipe_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.3fr, 1fr, 0.2fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
     justify-content: center;
+    font-size: 20px;
+    margin-bottom: 50px;  
+  }
+  
+  .coctail_pict_cont {
+    grid-area: 2 / 2 / 3 / 3;
+    width: 100%;
+    height: 300px;  
+    position: relative;
+  }
+  
+  .coctail_title {
+  grid-area: 1 / 1 / 2 / 3; 
+  font-family: var(--title-font); 
+  color: var(--dark);
+  position: relative;
+  margin-bottom: 40px;
+  }
+  .coctail_instructions {
+    grid-area: 3 / 2 / 4 / 3;
+    height: auto; 
+  }
+  
+  .ingredients_list {  
+    margin: 0;
+    padding: 0;  
+    list-style-type: none; 
+    grid-area:  2 / 1 / 4 / 2;  
+    height: auto;
+    border-right: 1px solid rgb(204, 203, 203);
+  }
+
+  .fav_icon {
+    right: -110px;
+    top: -10px; 
+  }
+  .fav_icon:hover {
+    cursor: pointer;
+    color: var(--accent-dark);  
+  }
+  .ingredients_list li {  
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* border-bottom: 1px solid var(--accent-dark); */
+    width: 90%;   
+  }
+  
+  .ingredients_list li img {
+    width: 70px;
+    cursor: pointer;
+  }
+ 
+
+
+  /****************** SEARCH RESULTS CONTAINER ********************/
+
+  .search_results {
+    display: flex;  
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: center;
+    box-shadow: unset;
+    width:70vw;
+    max-width: 1200px;
+  }
+
+  .search_var {
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);  
+
+    display: flex;
+    flex-direction: column;  
+    justify-content: flex-start;
+    margin-left: 20px;  
+    margin-top: 30px;
+    margin-bottom: 20px;
+    height: auto; 
+    width: 240px
+  }
+
+  .coctail_link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100% 
+  }
+
+  .coctail_img_var {
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 45px;
+  }
+
+  .bookmark {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+
+  .alco, .category {
+    position: absolute;  
+    width: 50%;
+    padding: 3px;
+    height: 40px;
+    text-align: center;
+    color: var(--dark); 
+  }
+
+  .alco {
+    top: 270px;
+    left:0;
+    border-right: 1px solid rgb(214, 214, 214); 
+  }
+
+  .category {
+    top: 270px;
+    right: 0;
+  }
+
+  .search_var:hover {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+
+
+/************************* INGREDIENT CONTAINER ********************/
+
+  .ingredient_container {
+    width: 75vw;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
     align-items: center;
   }
-  .btn_submit {
-    top: 32px;
-  }  
+
+  .ingredient_container img {  
+    width: 35%;  
+  }
+
+  .btn_showByIngred {  
+    font-size: 20px;
+    background-color: var(--light);
+    width: 150px;
+    border-radius: 3px;
+    background: linear-gradient(180deg, var(--lightest) 50%, var(--accent-light) 50%)
+  } 
+}
+
+@media only screen and (min-width: 933px) { 
+  .random{
+    padding-top: 35px; 
+  }
    
 }
 
 
-
-
-@media only screen and (max-width: 740px) {
-
-  .recipe_container {
-    grid-template-columns: 1fr; 
-  }
-  .coctail_pict_cont {
-    grid-area: 1 / 1 / 2 / 2;
-    height: 200px;
-    margin-left: 25vw;
-    margin-top: 70px;
-  }
-  .coctail_instructions {
-    grid-area: 3 / 1 / 4 / 2;
-  }
-  .ingredients_list {
-    grid-area: 2 / 1 / 3 / 2;
-  }
-
-  .ingr_content img {  
-    width: 15vw;  
-  }
-
-  .header_title span {
-    display: block;
-  }
- 
-}
-
-
-
-
-@media only screen and (max-width: 630px) {
-  header {
-    flex-direction: column;
-    
-  }
-  .header_title span {
-      display: inline;
-  }
-  .side_nav {
-    flex-direction: row;
-    padding:0;
-    margin:0;
-    margin-bottom: 2px;
-    bottom: -42px;
-    position: relative;
-  }
-  .nav-link { 
-    width: 200px;
-    align-self: center;
-    position: absolute;
-  }
-  .random {
-    left: -200px
-  }
-  .dropdown_content {
-    left: -90px;
-    top: 40px
-  }
-
-
-  .finder {
-    font-size: 33px;
-  }
- 
-  .coctail_pict_cont {   
-    margin-left: 21vw; 
-  }  
-  
-  .btn_showByIngred {  
-    width: 230px;
-    font-size: 16px;
-  }
-
-
-}
-
-/* phones  */
-@media only screen and (max-width: 480px) {
-  body {
-    width: 100%;
-    background-color: var(--dark);
-
-  }
-  header {
-    height: 20vh;
-  }
-  .header_title {
-    margin: 0;
-    flex-direction: column;
-    font-size: 25px;
-    margin-top: -8vh;
-  }
-   .side_nav {
-    position: static;
-    margin-bottom: -23vh;
-    display: flex;
-    z-index: 12;
-  }
-  .fav_icon {
-    color: var(--accent-light)
-  }
-  .nav-link {
-    position: static;
-    color: var(--dark) !important;
-    background-color: rgba(242, 242, 242, 0.808);
-    margin: 0 3px;
-    font-size: 16px;
-    padding: 2px;
-    box-shadow: unset;
-  }
-  .finder {
-    font-size: 18px;  
-    width: 90%;
-    z-index: 15;
-  
-  }
-  .find_line {
-    height: 15vh;
-    justify-content: flex-end;
-   margin-bottom: 0;
-  }
-
-  .dropdown_content {
-    margin: 13vh;
-    margin-top: 32vh; 
-  }
-  .dropdown_content li {
-    z-index: 30;
-    background-color: var(--light);
-    font-size: 18px;
-  }
+@media only screen and (min-width: 1024px) { 
   .text_input {
-    width: 300px;
-    margin: 10px auto;
+    width: 350px
   }
- 
-  .recipe_container,
-  .ingredient_container,
-  .search_results {
-    
-    width: 90vw;
-    box-shadow: unset;
-    margin-top: -40px;
-    padding-top: 20px;  
-    animation: 0.6s ease-in-out 0s 1 fadeIn;
-    padding-bottom: 80px;
-    font-size: 16px;
-    background-color: var(--dark);
-    color: var(--lightest);
-  }
-
-  .coctail_pict_cont {
-    width: 40vw;
-    height: 20vh;
-  }
-
-  .ingredients_list a {
-    font-size: 16px;   
-  }
-
-  .search_results {
-    flex-direction: column;
-  }
-  .search_var {
-    flex-direction: row;      
-    justify-content: space-between;
-    width: 90%; 
-    height: auto;
-    margin: 7px;
-    background-color: unset;
-    padding-bottom: 5px;
-    border-bottom: 2px solid var(--lightest);
-
-  }
-
-  .search_var a {
-flex-direction: row;
-
-
-  }
-  .coctail_img_var {
-    width: 100px;
-    position: static;
-    margin-left: 30px;
-    border: 2px solid var(--lightest)
-  
-  }
-
-  .bookmark {
-    
-    color: var(--lightest);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;   
-    width: 60%;
-  }
-
-  .title_var {
-    color: var(--accent-dark);
-    font-size: 18px;
-  }
-  .alco,
-  .category {
-    position: static;
-    width: auto;
-    background-color: unset;
-    font-size: 15px;
-  }
-
-  .btn_showByIngred {
-    box-shadow: unset;
-    margin-top: 5px;
-  }
-
-
 }
 
 
-
+@media only screen and (min-width: 1424px) { 
+  .finder {
+    margin-left: -80px;
+  }
+}
+@media only screen and (min-width: 1624px) { 
+  .finder {
+    margin-left: -120px;
+  }
+}
 
 @keyframes fadeIn {
   0% {
