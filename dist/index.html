@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coctail finder</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/45cc682c27.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Berkshire+Swash|Pacifico|Walter+Turncoat&display=swap" rel="stylesheet">
+  </head>
+<body>
+<div class="wrapper">
+
+  <header>      
+      <h1 class="header_title"> 
+        <div class="logo"></div>
+        find <i class="fas fa-cocktail"></i>our 
+         favorite coctail 
+      </h1>        
+  </header>
+
+      
+  <div class="find_line">   
+    <a class="random" href="#random"> get random Coctail</a>      
+    <div class="finder">
+        <div class="finder_label">
+<span>find by:</span>
+        <div class="radio_cont">
+          <input onclick class="radio_input" type="radio" id="title" name="find_by" value="name" checked/>
+          <label for="title">name</label>
+          <input onclick class="radio_input" type="radio" id="ingred" name="find_by" value="ingredient" />
+          <label for="ingred" id="ingred">ingredient</label>   
+        </div>     
+        </div>
+         
+
+        <div class="input_cont">
+          <input type="text" class="text_input" placeholder="enter name or ingredient"/>
+          <button class="btn btn_submit" type="submit"><i class="fas fa-cocktail"></i></button>
+        </div>  
+    </div>    
+      
+  </div>
+
+
+  <div class="content">
+    
+    <ul class="side_nav">  
+      <li class="favorites">
+        <a class="nav-link favorite " href="#favorite" > <i class="far fa-star "></i> Favorites <i class="far fa-star nav_fav"></i> </a>
+          <ul class="dropdown_content">
+     
+            <!--  -->
+            <li class="delete_all">Delete all favorites<i class="far fa-trash-alt"></i></li>
+          </ul>
+      </li>      
+      <li>
+        <a class="nav-link all-coctails" href="#allcoctails">All Coctails</a>
+      </li>
+      <li>
+        <a class="nav-link all-ingredients" href="#allingredients">Ingredients</a>
+      </li>   
+      <li class="home">
+        <a class="nav-link up" href="index.html"><i class="fas fa-home"></i></a>
+      </li>     
+    </ul> 
+
+
+
+    <div class="main">
+    <h5 class="message"></h5> 
+
+     <div class="loader">
+      <svg width="300" height="120" id="clackers">
+        <!-- Left arc path -->
+        <svg>
+          <path id="arc-left-up" fill="none" d="M 90 90 A 90 90 0 0 1 0 0"/>
+        </svg>
+        <!-- Right arc path -->
+        <svg>
+          <path id="arc-right-up" fill="none" d="M 100 90 A 90 90 0 0 0 190 0"/>
+        </svg>
+        
+        <text x="150" y="50" fill="var(--dark)" font-family="Helvetica Neue,Helvetica,Arial" font-size="18"
+              text-anchor="middle">
+          L O A D I N G
+        </text>
+        <circle cx="15" cy="15" r="15">
+          <!-- I used a python script to calculate the keyPoints and keyTimes based on a quadratic function. -->
+          <animateMotion dur="1.5s" repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0.0;0.19;0.36;0.51;0.64;0.75;0.84;0.91;0.96;0.99;1.0;0.99;0.96;0.91;0.84;0.75;0.64;0.51;0.36;0.19;0.0;0.0;0.05;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
+            keyTimes="0.0;0.025;0.05;0.075;0.1;0.125;0.15;0.175;0.2;0.225;0.25;0.275;0.3;0.325;0.35;0.375;0.4;0.425;0.45;0.475;0.5;0.525;0.55;0.575;0.6;0.625;0.65;0.675;0.7;0.725;0.75;0.775;0.8;0.825;0.85;0.875;0.9;0.925;0.95;0.975;1.0">
+            <mpath xlink:href="#arc-left-up"/>
+          </animateMotion>
+        </circle>
+        <circle cx="135" cy="105" r="15" />
+        <circle cx="165" cy="105" r="15" />
+        <circle cx="95" cy="15" r="15">
+          <animateMotion dur="1.5s" repeatCount="indefinite"
+            calcMode="linear"
+            keyPoints="0.0;0.0;0.05;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0.0;0.19;0.36;0.51;0.64;0.75;0.84;0.91;0.96;0.99;1.0;0.99;0.96;0.91;0.84;0.75;0.64;0.51;0.36;0.19;0.0"
+            keyTimes="0.0;0.025;0.05;0.075;0.1;0.125;0.15;0.175;0.2;0.225;0.25;0.275;0.3;0.325;0.35;0.375;0.4;0.425;0.45;0.475;0.5;0.525;0.55;0.575;0.6;0.625;0.65;0.675;0.7;0.725;0.75;0.775;0.8;0.825;0.85;0.875;0.9;0.925;0.95;0.975;1.0">
+            <mpath xlink:href="#arc-right-up"/>
+          </animateMotion>
+        </circle>
+      </svg>
+     </div>
+
+     <ul class="all_ingred"></ul>
+
+     <div class="abc_menu">       
+      <a>A</a>
+      <a>B</a>
+      <a>C</a>
+      <a>D</a>
+      <a>E</a>
+      <a>F</a>
+      <a>G</a>
+      <a>H</a>
+      <a>I</a>
+      <a>J</a>
+      <a>K</a>
+      <a>L</a>
+      <a>M</a>
+      <a>N</a>
+      <a>O</a>
+      <a>P</a>
+      <a>Q</a>
+      <a>R</a>
+      <a>S</a>
+      <a>T</a>
+      <a>U</a>
+      <a>V</a>
+      <a>W</a>
+      <a>X</a>
+      <a>Y</a>
+      <a>Z</a>
+    </div>
+
+
+
+
+      <!-- RECIPE CONTAINER -->
+      <div class="recipe_container">
+       <!-- <div class="coctail_pict_cont">
+    <h2 class="coctail_title">Mojito</h2>
+    <img class="coctail_img"
+    src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview"
+    alt="mojito"/> 
+  </div>
+
+  <div class="coctail_instructions"> 
+     <p>
+      Muddle mint leaves with sugar and lime juice.
+      Add a splash of soda water and fill the glass with cracked ice.
+      Pour the rum and top with soda water.
+      Garnish and serve with straw.
+    </p>          
+  </div> 
+
+  <ul class="ingredients_list">          
+    <li>
+      <a href="">
+        <img src="https://www.thecocktaildb.com/images/ingredients/Light rum-Small.png"/>
+      </a>
+      <span> 2-3 oz Light rum </span>            
+    </li>
+    <li>
+      <img src="https://www.thecocktaildb.com/images/ingredients/Lime-Small.png" />
+      <span>
+        2-3 oz Light rum  
+        </span>
+    </li>
+  </ul>        -->
+     </div>
+
+
+      <!-- SEARCH RESULTS CONTAINER -->
+      <div class="search_results">
+        <!-- <div class="search_var ">
+    <a href="">
+      <h3 class="coctail_title title_var">Title</h3>
+    <img class="coctail_img_var"
+    src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview"
+    alt="mojito"/>
+    </a>        
+  </div>
+  <div class="search_var">
+    <a href="">
+      <h3 class="coctail_title title_var">Title</h3>
+    <img class="coctail_img_var"
+    src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview"
+    alt="mojito"/>
+    </a>        
+  </div>     -->
+      </div>
+
+      <!-- INGREDIENT CONTAINER -->
+      <div class="ingredient_container">
+      </div> 
+
+    </div>  <!-- end main -->
+
+
+
+  </div>   <!-- end content -->
+ 
+</div>
+  
+ 
+  <footer>
+     <span class="copy">&copy 2020 KriStep All Rights Reserved</span>
+  </footer>
+
+  <script type="text/javascript" src="js/bundle.js"></script></body>
+</html>
