@@ -3,72 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coctail finder</title>
+    <title>Cocktail finder</title>
     <link rel="stylesheet" href="css/index.css" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/45cc682c27.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Berkshire+Swash|Pacifico|Walter+Turncoat&display=swap" rel="stylesheet">
   </head>
 <body>
-<div class="wrapper">
 
-  <header>      
-      <h1 class="header_title"> 
-        <div class="logo"></div>
-        find <i class="fas fa-cocktail"></i>our 
-         favorite coctail 
-      </h1>        
-  </header>
+
+  <header>   
+    <!-- <div class="logo"></div>    -->
+      <h1 class="header_title">      
+        Cocktail finder
+      </h1>     
+
 
       
-  <div class="find_line">   
-    <a class="random" href="#random"> get random Coctail</a>      
-    <div class="finder">
-        <div class="finder_label">
-<span>find by:</span>
-        <div class="radio_cont">
+  </header>
+
+  <div class="content"> 
+      
+    <ul class="side_nav">  
+      <li class="random">
+        <a class="nav-link " href="#random">Random Cocktail</a>   
+      </li>
+      <li class="favorites">
+        <a class="nav-link favorite " href="#favorite" > My Favorites  </a>
+          <ul class="dropdown_content">
+     
+            <!--  -->
+            <li class="delete_all">Delete all favorites</li>
+          </ul>
+      </li>      
+      <li>
+        <a class="nav-link all-coctails" href="#allcoctails">All Cocktails</a>
+      </li>
+      <li class="ingredients">
+        <a class="nav-link all-ingredients" href="#allingredients">Ingredients</a>
+      </li>           
+    </ul> 
+
+
+   
+<div class="main">
+        
+      <div class="find_line"> 
+        <div class="radio_cont"><span>find by:</span>
           <input onclick class="radio_input" type="radio" id="title" name="find_by" value="name" checked/>
           <label for="title">name</label>
           <input onclick class="radio_input" type="radio" id="ingred" name="find_by" value="ingredient" />
           <label for="ingred" id="ingred">ingredient</label>   
         </div>     
-        </div>
-         
-
         <div class="input_cont">
           <input type="text" class="text_input" placeholder="enter name or ingredient"/>
           <button class="btn btn_submit" type="submit"><i class="fas fa-cocktail"></i></button>
-        </div>  
-    </div>    
-      
-  </div>
-
-
-  <div class="content">
+        </div>           
+      </div> 
+   
     
-    <ul class="side_nav">  
-      <li class="favorites">
-        <a class="nav-link favorite " href="#favorite" > <i class="far fa-star "></i> Favorites <i class="far fa-star nav_fav"></i> </a>
-          <ul class="dropdown_content">
-     
-            <!--  -->
-            <li class="delete_all">Delete all favorites<i class="far fa-trash-alt"></i></li>
-          </ul>
-      </li>      
-      <li>
-        <a class="nav-link all-coctails" href="#allcoctails">All Coctails</a>
-      </li>
-      <li>
-        <a class="nav-link all-ingredients" href="#allingredients">Ingredients</a>
-      </li>   
-      <li class="home">
-        <a class="nav-link up" href="index.html"><i class="fas fa-home"></i></a>
-      </li>     
-    </ul> 
 
 
 
-    <div class="main">
+
+      
     <h5 class="message"></h5> 
 
      <div class="loader">
@@ -108,7 +106,8 @@
       </svg>
      </div>
 
-     <ul class="all_ingred"></ul>
+     <ul class="all_ingred">       
+     </ul>
 
      <div class="abc_menu">       
       <a>A</a>
@@ -139,62 +138,13 @@
       <a>Z</a>
     </div>
 
-
-
-
       <!-- RECIPE CONTAINER -->
       <div class="recipe_container">
-       <!-- <div class="coctail_pict_cont">
-    <h2 class="coctail_title">Mojito</h2>
-    <img class="coctail_img"
-    src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview"
-    alt="mojito"/> 
-  </div>
-
-  <div class="coctail_instructions"> 
-     <p>
-      Muddle mint leaves with sugar and lime juice.
-      Add a splash of soda water and fill the glass with cracked ice.
-      Pour the rum and top with soda water.
-      Garnish and serve with straw.
-    </p>          
-  </div> 
-
-  <ul class="ingredients_list">          
-    <li>
-      <a href="">
-        <img src="https://www.thecocktaildb.com/images/ingredients/Light rum-Small.png"/>
-      </a>
-      <span> 2-3 oz Light rum </span>            
-    </li>
-    <li>
-      <img src="https://www.thecocktaildb.com/images/ingredients/Lime-Small.png" />
-      <span>
-        2-3 oz Light rum  
-        </span>
-    </li>
-  </ul>        -->
      </div>
 
 
       <!-- SEARCH RESULTS CONTAINER -->
-      <div class="search_results">
-        <!-- <div class="search_var ">
-    <a href="">
-      <h3 class="coctail_title title_var">Title</h3>
-    <img class="coctail_img_var"
-    src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview"
-    alt="mojito"/>
-    </a>        
-  </div>
-  <div class="search_var">
-    <a href="">
-      <h3 class="coctail_title title_var">Title</h3>
-    <img class="coctail_img_var"
-    src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview"
-    alt="mojito"/>
-    </a>        
-  </div>     -->
+      <div class="search_results">        
       </div>
 
       <!-- INGREDIENT CONTAINER -->
@@ -202,17 +152,15 @@
       </div> 
 
     </div>  <!-- end main -->
-
-
-
-  </div>   <!-- end content -->
+    </div>   <!-- end content -->
  
-</div>
-  
- 
+
   <footer>
-     <span class="copy">&copy 2020 KriStep All Rights Reserved</span>
+    <span class="copy">&copy 2020 KriStep All Rights Reserved</span>    
+    <i class="fas fa-arrow-up go-up"></i>
   </footer>
+ 
+ 
 
   <script type="text/javascript" src="js/bundle.js"></script></body>
 </html>
