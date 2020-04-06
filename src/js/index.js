@@ -24,7 +24,6 @@ export const clean = () => {
   elements.recipeContainer.innerHTML = '';
   elements.searchInput.value = '';
   elements.searchResults.innerHTML = '';
-  //elements.message.innerText = '';
   elements.ingrContainer.innerHTML = '';
   document.querySelector('.all_ingred').innerHTML = '';
   document.querySelector('.abc_menu').style.display = 'none';
@@ -34,17 +33,17 @@ export const clean = () => {
   elements.favoriteDropdown.style.display = 'none';
 }
 
-const headerShrink = () => {
-  if (window.screen.width > 480) {
-    // document.querySelector('header').style.height = '15vh';
-    // document.querySelector('header').style.justifyContent = 'space-between';
-    // document.querySelector('.header_title').style.fontSize = '2em';
-    // elements.sideNav.style.display = 'flex';
-  }
-}
-const headerBig = () => {
-  document.querySelector('header').style.height = '100vh';
-}
+// const headerShrink = () => {
+//   if (window.screen.width > 480) {
+//     document.querySelector('header').style.height = '15vh';
+//     document.querySelector('header').style.justifyContent = 'space-between';
+//     document.querySelector('.header_title').style.fontSize = '2em';
+//     elements.sideNav.style.display = 'flex';
+//   }
+// }
+// const headerBig = () => {
+//   document.querySelector('header').style.height = '100vh';
+// }
 
 const getInput = () => {
   if (elements.searchInput.value) {
@@ -130,12 +129,11 @@ window.addEventListener('load', () => {
   state.favorites.favorites.forEach(fav => favoritesView.renderFav(fav))
 });
 
-window.addEventListener('scroll', () => {
-  if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) headerShrink()
-});
+// window.addEventListener('scroll', () => {
+//   if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) headerShrink()
+// });
 
 document.querySelector('.header_title').addEventListener('click', () => {
-  headerShrink();
   clean()
 })
 
@@ -145,7 +143,6 @@ document.querySelector('.btn_submit', e => {
 
 //RANDOM coctail
 elements.randomBtn.addEventListener('click', () => {
-  headerShrink();
   window.location.hash = `random`;
   showCoctail();
 })
@@ -187,14 +184,12 @@ elements.allCoctails.addEventListener('click', () => {
 
 //RADIO BUTTONS clicked
 elements.titleRadio.onclick = () => {
-  headerShrink();
   clean();
   elements.message.innerText = '';
   window.location.hash = ``;
   elements.searchInput.focus();
 }
 elements.ingredRadio.onclick = () => {
-  headerShrink();
   clean();
   elements.message.innerText = '';
   window.location.hash = ``;
@@ -203,7 +198,6 @@ elements.ingredRadio.onclick = () => {
 
 //SEARCH input
 elements.searchInput.addEventListener('change', () => {
-  headerShrink();
   if (elements.titleRadio.checked == false && elements.ingredRadio.checked == false) {
     elements.message.innerText = `Please select one option above (name or ingredient)`;
     elements.searchInput.value = ``;
@@ -235,7 +229,8 @@ document.addEventListener('click', e => {
 document.addEventListener('click', (e) => {
   if (e.target.className === 'delete_all') {
     state.favorites.deleteAll()
-  }
+  };
+  elements.favoriteDropdown.style.display = 'none'
 })
 
 //delete from favorites list
