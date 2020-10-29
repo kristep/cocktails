@@ -1,3 +1,3 @@
-This is my very first personal project.
+This is my very first personal project, made with plain JavaScript.
 
-https://kristep.github.io/coctails
+https://kristep.github.io/cocktails/
